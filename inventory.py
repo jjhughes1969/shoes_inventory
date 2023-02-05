@@ -30,18 +30,33 @@ class Shoe:
 
 def read_shoes_data():
     
-    while True:
-        try:
-            file_name = input("\nPlease enter the name of your source data file : ")
-            # data file is called inventory.txt
-            with open(file_name, "r", encoding="utf-8") as shoes_data:
-                shoes_data_by_line = shoes_data.readlines()[1:]
-                for line in shoes_data_by_line:
-                    data = line.split(",")
-                    shoe_list.append(Shoe(data[0], data[1], data[2], data[3], data[4]))
-            break
-        except FileNotFoundError:
-            print("\nThat file does not exist or is not in this folder.  Please check what you entered and try again.  Don't forget to include .txt at the end of the filename.")
+    print("\nDo you wish to continue with the default data file (\"inventory.txt\"), or do you want to enter the name of a new source data file?")
+    file_choice = input("\nType 'continue' to use the default data file, or 'new' to enter the name of a new data file : ")
+    file_choice = file_choice.lower()
+
+    while file_choice != "continue" and file_choice !="new":
+        file_choice = input("That is an incorrect input.  Please enter 'continue' or 'new' : ")
+
+    if file_choice == "continue":
+        with open("inventory.txt", "r", encoding="utf-8") as shoes_data:
+            shoes_data_by_line = shoes_data.readlines()[1:]
+            for line in shoes_data_by_line:
+                data = line.split(",")
+                shoe_list.append(Shoe(data[0], data[1], data[2], data[3], data[4]))
+
+    else:
+        while True:
+            try:
+                file_name = input("\nPlease enter the name of your source data file : ")
+                # data file is called inventory.txt
+                with open(file_name, "r", encoding="utf-8") as shoes_data:
+                    shoes_data_by_line = shoes_data.readlines()[1:]
+                    for line in shoes_data_by_line:
+                        data = line.split(",")
+                        shoe_list.append(Shoe(data[0], data[1], data[2], data[3], data[4]))
+                break
+            except FileNotFoundError:
+                print("\nThat file does not exist or is not in this folder.  Please check what you entered and try again.  Don't forget to include .txt at the end of the filename.")
     
 # Function to create a new shoe object and append it to shoe_list.
 
