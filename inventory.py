@@ -63,12 +63,33 @@ def read_shoes_data():
 def capture_shoes():
 
     print("\nIn order to add a new item to inventory, you need to input the following data:")
+   
     country = input("\tCountry : ")
-    code = input("\tCode (SKU followed by five digits) : ")
+
+    # Section to enforce correct formatting on Product Code
+    while True:
+        try:
+            code = int(input("\tProduct Code (Enter up to five digits) : "))
+            break
+        except ValueError:
+            print("\tThat is not a number.")
+    while code > 99999:
+        print("\tThe Product Code must be five digits or less.")
+        while True:
+            try:
+                code = int(input("\tProduct Code (Enter up to five digits) : "))
+                break
+            except ValueError:
+                print("\tThat is not a number.")
+    code = str(code)
+    code = code.zfill(5)
+    product_code = "SKU" + code
+
     product = input("\tProduct Name : ")
     cost = input("\tCost (in Rand) : ")
     quantity = input("\tQuantity : ")
-    shoe_list.append(Shoe(country, code, product, cost, quantity)) 
+    
+    shoe_list.append(Shoe(country, product_code, product, cost, quantity)) 
     print("\nYour item has been added to the inventory.")
 
 # Function for viewing all the shoes in shoe_list.
