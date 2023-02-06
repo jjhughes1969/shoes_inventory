@@ -21,7 +21,9 @@ You will require Python 3 to run this project in your IDE.
 
 The default datafile for this program is inventory.txt.  You can either proceed with this default datafile or enter the details of a new source datafile.
 
-![Screenshot 2023-02-03 at 14 06 57](https://user-images.githubusercontent.com/124285490/216623631-fa335dba-ba9d-46e8-8d80-1fea6ef4a76f.png)
+![Screenshot 2023-02-06 at 14 36 40](https://user-images.githubusercontent.com/124285490/217000594-9cce6f89-4d0a-4be7-925e-f332ea282c3f.png)
+
+![Screenshot 2023-02-06 at 14 37 03](https://user-images.githubusercontent.com/124285490/217000536-0ac76433-7c58-4a9c-bc62-16d829baa3e1.png)
 
 You will then be presented with a menu of options, which can be selected using the appropriate number.
 
