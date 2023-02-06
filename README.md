@@ -19,7 +19,7 @@ You will require Python 3 to run this project in your IDE.
 
 ### Usage of the Project
 
-You will first need to enter the name of the source data file.  This needs to be inventory.txt.  Note that this was not automatically populated so that program could test try-except error handling.
+The default datafile for this program is inventory.txt.  You can either proceed with this default datafile or enter the details of a new source datafile.
 
 ![Screenshot 2023-02-03 at 14 06 57](https://user-images.githubusercontent.com/124285490/216623631-fa335dba-ba9d-46e8-8d80-1fea6ef4a76f.png)
 
@@ -27,7 +27,7 @@ You will then be presented with a menu of options, which can be selected using t
 
 ![Screenshot 2023-02-03 at 14 09 25](https://user-images.githubusercontent.com/124285490/216624168-3467c4d3-e8a1-4d7c-b415-d96a56acfde8.png)
 
-Selecting option 1 allows you to add a new shoe to the inventory. Please note in particular the format for the SKU number which must be entered correctly.
+Selecting option 1 allows you to add a new shoe to the inventory. The Product Code SKU number has to be in the correct format (SKU plus 5 digits), so the user is only prompted for a number up to 5 digits, and then the program automatically fills the rest of the Product Code.
 
 ![Screenshot 2023-02-03 at 14 10 51](https://user-images.githubusercontent.com/124285490/216624627-dabadb62-48cb-403f-b517-48664ddfb793.png)
 
